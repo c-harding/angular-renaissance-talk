@@ -37,9 +37,8 @@ The last comment block of each slide will be treated as slide notes. It will be 
 
 ---
 transition: fade-out
+title: What is Slidev?
 ---
-
-# What is Slidev?
 
 Slidev is a slides maker and presenter designed for developers, consist of the following features
 
@@ -79,9 +78,8 @@ Here is another comment.
 ---
 transition: slide-up
 level: 2
+title: Navigation
 ---
-
-# Navigation
 
 Hover on the bottom-left corner to see the navigation's controls panel, [learn more](https://sli.dev/guide/ui#navigation-bar)
 
@@ -106,9 +104,8 @@ Hover on the bottom-left corner to see the navigation's controls panel, [learn m
 ---
 layout: two-cols
 layoutClass: gap-16
+title: Table of contents
 ---
-
-# Table of contents
 
 You can use the `Toc` component to generate a table of contents for your slides:
 
@@ -125,9 +122,8 @@ The title will be inferred from your slide content, or you can override it with 
 ---
 layout: image-right
 image: https://cover.sli.dev
+title: Code
 ---
-
-# Code
 
 Use code snippets and get the highlighting directly, and even types hover!
 
@@ -178,9 +174,8 @@ Notes can also sync with clicks
 
 ---
 level: 2
+title: Shiki Magic Move
 ---
-
-# Shiki Magic Move
 
 Powered by [shiki-magic-move](https://shiki-magic-move.netlify.app/), Slidev supports animations across multiple code snippets.
 
@@ -251,8 +246,8 @@ const author = {
 ````
 
 ---
-
-# Components
+title: Components
+---
 
 <div grid="~ cols-2 gap-4">
 <div>
@@ -293,10 +288,9 @@ Also, HTML elements are valid:
 -->
 
 ---
-class: px-20
+article-class: px-20
+title: Themes
 ---
-
-# Themes
 
 Slidev comes with powerful theming support. Themes can provide styles, layouts, components, or even configurations for tools. Switching between themes by just **one edit** in your frontmatter:
 
@@ -324,8 +318,8 @@ Read more about [How to use a theme](https://sli.dev/guide/theme-addon#use-theme
 check out the [Awesome Themes Gallery](https://sli.dev/resources/theme-gallery).
 
 ---
-
-# Clicks Animations
+title: Clicks Animations
+---
 
 You can add `v-click` to elements to add a click animation.
 
@@ -361,8 +355,8 @@ also allows you to add
 </div>
 
 ---
-
-# Motions
+title: Motions
+---
 
 Motion animations are powered by [@vueuse/motion](https://motion.vueuse.org/), triggered by `v-motion` directive.
 
@@ -441,8 +435,8 @@ const final = {
 </div>
 
 ---
-
-# LaTeX
+title: LaTeX
+---
 
 LaTeX is supported out-of-box. Powered by [KaTeX](https://katex.org/).
 
@@ -463,8 +457,8 @@ $$
 [Learn more](https://sli.dev/features/latex)
 
 ---
-
-# Diagrams
+title: Diagrams
+---
 
 You can create diagrams / graphs from textual descriptions, directly in your Markdown.
 
@@ -543,10 +537,9 @@ Learn more: [Mermaid Diagrams](https://sli.dev/features/mermaid) and [PlantUML D
 ---
 foo: bar
 dragPos:
-  square: 691,32,167,_,-16
+  square: 639,11,167,_,-16
+title: Draggable Elements
 ---
-
-# Draggable Elements
 
 Double-click on the draggable elements to edit their positions.
 
@@ -569,7 +562,7 @@ Double-click on the draggable elements to edit their positions.
 </v-drag>
 ```
 
-<v-drag pos="663,206,261,_,-15">
+<v-drag pos="657,208,267,_,-39">
   <div text-center text-3xl border border-main rounded>
     Double-click me!
   </div>
@@ -591,8 +584,8 @@ hide: false
 ---
 
 ---
-
-# Monaco Editor
+title: Monaco Editor
+---
 
 Slidev provides built-in Monaco Editor support.
 
@@ -619,9 +612,8 @@ console.log(emptyArray<number>(10).reduce(fib => [...fib, fib.at(-1)! + fib.at(-
 ---
 layout: center
 class: text-center
+title: Learn More
 ---
-
-# Learn More
 
 [Documentation](https://sli.dev) · [GitHub](https://github.com/slidevjs/slidev) · [Showcases](https://sli.dev/resources/showcases)
 
