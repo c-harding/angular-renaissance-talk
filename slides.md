@@ -1,105 +1,84 @@
 ---
 # You can also start simply with 'default'
 theme: qaware
+color: blue
 # some information about your slides (markdown enabled)
-title: QAware
-# apply unocss classes to the current slide
-class: text-center
+title: Angular Renaissance
+author: Charlie Harding · QAware GmbH
+authorUrl: qaware.de
 # https://sli.dev/features/drawing
 drawings:
   persist: false
 # slide transition: https://sli.dev/guide/animations.html#slide-transitions
-transition:
-# enable MDC Syntax: https://sli.dev/features/mdc
+transition: # enable MDC Syntax: https://sli.dev/features/mdc
+
 mdc: true
 ---
 
-# Welcome to Slidev
+Ein Blick in die moderne Welt von Angular
 
-Presentation slides for developers
+::footer::
 
-<div @click="$slidev.nav.next" class="mt-12 py-1" hover:bg="white op-10">
-  Press Space for next page <carbon:arrow-right />
-</div>
-
-<div class="abs-br m-6 text-xl">
-  <button @click="$slidev.nav.openInEditor" title="Open in Editor" class="slidev-icon-btn">
-    <carbon:edit />
-  </button>
-  <a href="https://github.com/slidevjs/slidev" target="_blank" class="slidev-icon-btn">
-    <carbon:logo-github />
-  </a>
-</div>
-
-<!--
-The last comment block of each slide will be treated as slide notes. It will be visible and editable in Presenter Mode along with the slide. [Read more in the docs](https://sli.dev/guide/syntax.html#notes)
--->
+Charlie Harding
+<SmartLink to="charlie.harding@qaware.de"/>
 
 ---
-transition: fade-out
-title: What is Slidev?
+title: Was ist Angular?
+layout: two-cols
+right-style:
+  --slidev-code-font-size: 16px
 ---
 
-Slidev is a slides maker and presenter designed for developers, consist of the following features
+<v-clicks at="+0" depth="2">
 
-- 📝 **Text-based** - focus on the content with Markdown, and then style them later
-- 🎨 **Themable** - themes can be shared and re-used as npm packages
-- 🧑‍💻 **Developer Friendly** - code highlighting, live coding with autocompletion
-- 🤹 **Interactive** - embed Vue components to enhance your expressions
-- 🎥 **Recording** - built-in recording and camera view
-- 📤 **Portable** - export to PDF, PPTX, PNGs, or even a hostable SPA
-- 🛠 **Hackable** - virtually anything that's possible on a webpage is possible in Slidev
-<br>
-<br>
+- Ein TypeScript-basiertes Web-**Framework**
+- Batteries-Included / Bereit für Enterprise™
+  - HTTP-Client
+  - Services
+  - Dependency-Injection
 
-Read more about [Why Slidev?](https://sli.dev/guide/why)
+</v-clicks>
 
-<!--
-You can have `style` tag in markdown to override the style for the current page.
-Learn more: https://sli.dev/features/slide-scope-style
--->
+::right::
 
-<style>
-h1 {
-  background-color: #2B90B6;
-  background-image: linear-gradient(45deg, #4EC5D4 10%, #146b8c 20%);
-  background-size: 100%;
-  -webkit-background-clip: text;
-  -moz-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  -moz-text-fill-color: transparent;
+<v-click>
+
+```angular-ts {all|2|3-5|7-9|all}
+@Component({
+  selector: "demo-greeter",
+  template: `
+    <b>Hello {{ name() }}!</b>
+  `,
+})
+export class GreeterComponent {
+  name = input<string>();
 }
-</style>
+```
+
+</v-click>
 
 <!--
 Here is another comment.
 -->
 
 ---
-transition: slide-up
-level: 2
-title: Navigation
+src: ./pages/signals-demo.md
+hide: false
 ---
 
-Hover on the bottom-left corner to see the navigation's controls panel, [learn more](https://sli.dev/guide/ui#navigation-bar)
+<!--
+- Modernes Angular basiert sich stark auf Signals
+- Für die React- und Vue-Entwickler unter euch: „`ref`“
+- Sie repräsentieren die Einheit von Reactivität
+-->
 
-## Keyboard Shortcuts
+---
+src: ./pages/signals-component.md
+hide: false
+---
 
-|                                                     |                             |
-| --------------------------------------------------- | --------------------------- |
-| <kbd>right</kbd> / <kbd>space</kbd>                 | next animation or slide     |
-| <kbd>left</kbd>  / <kbd>shift</kbd><kbd>space</kbd> | previous animation or slide |
-| <kbd>up</kbd>                                       | previous slide              |
-| <kbd>down</kbd>                                     | next slide                  |
-
-<!-- https://sli.dev/guide/animations.html#click-animation -->
-<img
-  v-click
-  class="absolute -bottom-9 -left-7 w-80 opacity-50"
-  src="https://sli.dev/assets/arrow-bottom-left.svg"
-  alt=""
-/>
-<p v-after class="absolute bottom-23 left-45 opacity-30 transform -rotate-10">Here!</p>
+<!--
+-->
 
 ---
 layout: two-cols
@@ -132,17 +111,18 @@ Use code snippets and get the highlighting directly, and even types hover!
 // and errors in markdown code blocks
 // More at https://shiki.style/packages/twoslash
 
-import { computed, ref } from 'vue'
+import { computed, ref } from "vue";
 
-const count = ref(0)
-const doubled = computed(() => count.value * 2)
+const count = ref(0);
+const doubled = computed(() => count.value * 2);
 
-doubled.value = 2
+doubled.value = 2;
 ```
 
 <arrow v-click="[4, 5]" x1="350" y1="310" x2="195" y2="334" color="#953" width="2" arrowSize="1" />
 
 <!-- This allow you to embed external code blocks -->
+
 <<< @/snippets/external.ts#snippet
 
 <!-- Footer -->
@@ -185,13 +165,13 @@ Add multiple code blocks and wrap them with <code>````md magic-move</code> (four
 ```ts {*|2|*}
 // step 1
 const author = reactive({
-  name: 'John Doe',
+  name: "John Doe",
   books: [
-    'Vue 2 - Advanced Guide',
-    'Vue 3 - Basic Guide',
-    'Vue 4 - The Mystery'
-  ]
-})
+    "Vue 2 - Advanced Guide",
+    "Vue 3 - Basic Guide",
+    "Vue 4 - The Mystery",
+  ],
+});
 ```
 
 ```ts {*|1-2|3-4|3-4,8}
@@ -200,16 +180,16 @@ export default {
   data() {
     return {
       author: {
-        name: 'John Doe',
+        name: "John Doe",
         books: [
-          'Vue 2 - Advanced Guide',
-          'Vue 3 - Basic Guide',
-          'Vue 4 - The Mystery'
-        ]
-      }
-    }
-  }
-}
+          "Vue 2 - Advanced Guide",
+          "Vue 3 - Basic Guide",
+          "Vue 4 - The Mystery",
+        ],
+      },
+    };
+  },
+};
 ```
 
 ```ts
@@ -217,15 +197,15 @@ export default {
 export default {
   data: () => ({
     author: {
-      name: 'John Doe',
+      name: "John Doe",
       books: [
-        'Vue 2 - Advanced Guide',
-        'Vue 3 - Basic Guide',
-        'Vue 4 - The Mystery'
-      ]
-    }
-  })
-}
+        "Vue 2 - Advanced Guide",
+        "Vue 3 - Basic Guide",
+        "Vue 4 - The Mystery",
+      ],
+    },
+  }),
+};
 ```
 
 Non-code blocks are ignored.
@@ -234,13 +214,13 @@ Non-code blocks are ignored.
 <!-- step 4 -->
 <script setup>
 const author = {
-  name: 'John Doe',
+  name: "John Doe",
   books: [
-    'Vue 2 - Advanced Guide',
-    'Vue 3 - Basic Guide',
-    'Vue 4 - The Mystery'
-  ]
-}
+    "Vue 2 - Advanced Guide",
+    "Vue 3 - Basic Guide",
+    "Vue 4 - The Mystery",
+  ],
+};
 </script>
 ```
 ````
@@ -271,8 +251,6 @@ Check out [the guides](https://sli.dev/builtin/components.html) for more.
 ```html
 <Tweet id="1390115482657726468" />
 ```
-
-<Tweet id="1390115482657726468" scale="0.65" />
 
 </div>
 </div>
@@ -445,7 +423,9 @@ LaTeX is supported out-of-box. Powered by [KaTeX](https://katex.org/).
 Inline $\sqrt{3x-1}+(1+x)^2$
 
 Block
-$$ {1|3|all}
+
+$$
+{1|3|all}
 \begin{aligned}
 \nabla \cdot \vec{E} &= \frac{\rho}{\varepsilon_0} \\
 \nabla \cdot \vec{B} &= 0 \\
@@ -537,7 +517,7 @@ Learn more: [Mermaid Diagrams](https://sli.dev/features/mermaid) and [PlantUML D
 ---
 foo: bar
 dragPos:
-  square: 639,11,167,_,-16
+  square: -4,-88,0,0
 title: Draggable Elements
 ---
 
@@ -592,21 +572,26 @@ Slidev provides built-in Monaco Editor support.
 Add `{monaco}` to the code block to turn it into an editor:
 
 ```ts {monaco}
-import { ref } from 'vue'
-import { emptyArray } from './external'
+import { ref } from "vue";
+import { emptyArray } from "./external";
 
-const arr = ref(emptyArray(10))
+const arr = ref(emptyArray(10));
 ```
 
 Use `{monaco-run}` to create an editor that can execute the code directly in the slide:
 
 ```ts {monaco-run}
-import { version } from 'vue'
-import { emptyArray, sayHello } from './external'
+import { version } from "vue";
+import { emptyArray, sayHello } from "./external";
 
-sayHello()
-console.log(`vue ${version}`)
-console.log(emptyArray<number>(10).reduce(fib => [...fib, fib.at(-1)! + fib.at(-2)!], [1, 1]))
+sayHello();
+console.log(`vue ${version}`);
+console.log(
+  emptyArray<number>(10).reduce(
+    (fib) => [...fib, fib.at(-1)! + fib.at(-2)!],
+    [1, 1],
+  ),
+);
 ```
 
 ---
@@ -618,3 +603,30 @@ title: Learn More
 [Documentation](https://sli.dev) · [GitHub](https://github.com/slidevjs/slidev) · [Showcases](https://sli.dev/resources/showcases)
 
 <PoweredBySlidev mt-10 />
+
+---
+layout: chapter
+title: Q & A
+---
+
+---
+layout: end
+---
+
+Charlie Harding
+
+<EndLink to="charlie.harding@qaware.de" />
+
+::right::
+
+<div max-w-max>
+
+<EndLink to="linkedin.com/company/qaware-gmbh"><bxl-linkedin /></EndLink>
+<EndLink to="github.com/qaware"><bxl-github /></EndLink>
+
+<hr my-2 />
+
+<EndLink to="linkedin.com/in/charlie-harding"><bxl-linkedin /></EndLink>
+<EndLink to="github.com/c-harding"><bxl-github /></EndLink>
+
+</div>
