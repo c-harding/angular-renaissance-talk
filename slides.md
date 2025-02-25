@@ -34,7 +34,7 @@ rightClass: flex
 
 **Charlie Harding**  
 Senior Software Engineer  
-bei QAware GmbH
+bei QAware GmbH, München
 
 <v-click>
 
