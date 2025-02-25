@@ -3,7 +3,7 @@ title: Services
 layout: chapter
 ---
 
-Angular ist bereit für Enterprise™
+Angular ist bereit für Enterprise
 
 ---
 title: Services
@@ -223,7 +223,7 @@ Wenn man Browser-APIs wie `Location` injecten lässt, kann man sie sehr einfach 
 
 [click] Nicht nur Klassen, sondern beliebige Werte können injected werden.
 
-Wie geht das technisch? Was ist  
+Wie geht das technisch? Was ist
 -->
 
 ---

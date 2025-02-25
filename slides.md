@@ -27,6 +27,31 @@ Charlie Harding
 <a href="https://github.com/c-harding/angular-renaissance-talk" class="underline opacity-75 text-sm" target="_blank">Folien-Quelle</a>
 
 ---
+title: Wer bin ich?
+layout: two-cols
+rightClass: flex
+---
+
+**Charlie Harding**  
+Senior Software Engineer  
+bei QAware GmbH
+
+<v-click>
+
+Frontend-begeistert
+
+</v-click>
+<v-click>
+
+Angular-Entwickler
+
+</v-click>
+
+::right::
+
+<img src="../img/cha.jpeg"  class="rounded-full w-70 mx-auto" />
+
+---
 title: Was ist Angular?
 layout: two-cols
 ---
