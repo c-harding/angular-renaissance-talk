@@ -1,4 +1,4 @@
-# Welcome to [Slidev](https://github.com/slidevjs/slidev)!
+# Angular Renaissance
 
 To start the slide show:
 

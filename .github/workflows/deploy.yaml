@@ -1,0 +1,104 @@
+name: Deploy Slidev site to Pages
+
+on:
+  # Runs on pushes targeting the default branch
+  push:
+    branches-ignore:
+      - gh-pages
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: "Dry run"
+        type: boolean
+
+# Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+# Allow only one concurrent deployment, skipping runs queued between the run in-progress and latest queued.
+# However, do NOT cancel in-progress runs as we want to allow these production deployments to complete.
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
+jobs:
+  build-deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.pages.outputs.base_url }}/${{ github.head_ref || github.ref_name }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Detect package manager
+        id: detect-package-manager
+        run: |
+          if [ -f "${{ github.workspace }}/yarn.lock" ]; then
+            echo "manager=yarn" >> $GITHUB_OUTPUT
+            echo "command=install" >> $GITHUB_OUTPUT
+            echo "install=install" >> $GITHUB_OUTPUT
+            echo "run=run" >> $GITHUB_OUTPUT
+            exit 0
+          elif [ -f "${{ github.workspace }}/package.json" ]; then
+            echo "manager=npm" >> $GITHUB_OUTPUT
+            echo "install=ci" >> $GITHUB_OUTPUT
+            echo "run=run --" >> $GITHUB_OUTPUT
+            exit 0
+          else
+            echo "Unable to determine package manager"
+            exit 1
+          fi
+      - uses: webfactory/ssh-agent@v0.9.0
+        with:
+          ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: ${{ steps.detect-package-manager.outputs.manager }}
+      - name: Setup Pages
+        id: pages
+        uses: actions/configure-pages@v5
+      - name: Install dependencies
+        run: ${{ steps.detect-package-manager.outputs.manager }} ${{ steps.detect-package-manager.outputs.install }}
+      - name: Static HTML export with Slidev
+        run: ${{ steps.detect-package-manager.outputs.manager }} ${{ steps.detect-package-manager.outputs.run }} build --base ${{ steps.pages.outputs.base_path }}/${{ github.head_ref || github.ref_name }}/
+      - name: Checkout gh-pages
+        uses: actions/checkout@v4
+        with:
+          ref: "gh-pages"
+          path: gh-pages
+      - name: Copy build result
+        run: |
+          DEST_DIR=gh-pages/"${{ github.head_ref || github.ref_name }}"
+          rm -rf "$DEST_DIR"
+          mkdir -p "$DEST_DIR"
+          rsync -a --delete dist/ "$DEST_DIR"/
+      - name: Push to GitHub Pages branch
+        id: gh-pages-push
+        working-directory: gh-pages
+        run: |
+          git add  --all .
+          if [[ `git status --porcelain` ]]; then
+            git config user.name ${{github.event.pusher.name}}
+            git config user.email ${{github.event.pusher.email}}
+            git commit -m "Deploying to gh-pages from ${{ github.head_ref || github.ref_name }}@${{ github.sha }}"
+            git push || (git pull --rebase && git push)
+            echo "changes=true" >> $GITHUB_OUTPUT
+          else
+            echo "No changes, nothing to deploy"
+            echo "changes=false" >> $GITHUB_OUTPUT
+          fi
+      - name: Create GitHub Pages artifact
+        if: ${{ steps.gh-pages-push.outputs.changes == 'true' }}
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: gh-pages/
+      - name: Deploy to GitHub Pages
+        if: ${{ steps.gh-pages-push.outputs.changes == 'true' }}
+        id: deployment
+        uses: actions/deploy-pages@v4
