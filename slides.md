@@ -35,6 +35,7 @@ layout: two-cols
 
 - Ein TypeScript-basiertes Web-**Framework**
 - Batteries-Included / Bereit für Enterprise™
+  - Router
   - HTTP-Client
   - Services
   - Dependency-Injection
@@ -60,7 +61,14 @@ export class GreeterComponent {
 </v-click>
 
 <!--
-Here is another comment.
+[click:5] Wie sieht das Ganze jetzt aus?
+
+[click] Hier eine Beispiels-Komponente, die einen Namen anzeigt.
+
+[click] Sie besteht aus
+- einen Selector,
+- [click] ein HTML-Template,
+- [click] und eine TypeScript-Klasse.
 -->
 
 ---
@@ -68,15 +76,13 @@ title: Reaktivität
 layout: chapter
 ---
 
+<!--
+Reaktivität bedeutet, dass Änderungen im Datenmodell automatisch die Benutzeroberfläche aktualisieren. Zuerst schauen wir uns an, wie wir den Datenmodell speichern.
+-->
+
 ---
 src: ./pages/signals-demo.md
 ---
-
-<!--
-- Modernes Angular basiert sich stark auf Signals
-- Für die React- und Vue-Entwickler unter euch: „`ref`“
-- Sie repräsentieren die Einheit von Reactivität
--->
 
 ---
 src: ./pages/signals-component.md
@@ -93,6 +99,25 @@ src: ./pages/change-detection.md
 ---
 src: ./pages/services.md
 ---
+
+---
+layout: chapter
+title: Zusammenfassung
+---
+
+---
+title: Zusammenfassung
+---
+
+<v-clicks at="0">
+
+- Angular hat jetzt effizientere Reactivität
+
+- Angular hat jetzt effizientere Change-Detection
+
+- Angular hat Dependency-Injection für bessere Skalierbarkeit und Separation of Concerns
+
+</v-clicks>
 
 ---
 layout: chapter

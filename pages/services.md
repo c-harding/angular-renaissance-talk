@@ -119,12 +119,18 @@ layout: two-cols
 <v-clicks at="0" depth="2">
 
 - Nicht nur Injectables lassen sich injecten
-- `@Injectable()` ermöglicht diese Abkürzung:
+- `@Injectable()` ermöglicht eine Abkürzung<span v-click.hide=2>:</span>
 - Man kann auch andere Klassen injecten
   - Bspw. zum Testen
 - Und auch andere Werte
 
 </v-clicks>
+<v-click at="10">
+
+- Saubere Trennung zwischen Schnittstelle und Implementierung
+
+</v-click>
+
 ::right::
 
 ````md magic-move { at: 1 }
@@ -132,7 +138,7 @@ layout: two-cols
 ```ts {|2-4}
 @Component({
   providers: [
-    ClientApi
+    ClientApi,
   ],
 })
 ```
@@ -206,6 +212,19 @@ const location: Location
 ```
 <!-- prettier-ignore-end -->
 ````
+
+<!--
+[click] Man kann Injectable-Klassen direkt in der Providers-Array auflisten.
+
+[click] Man kann auch andere Klassen providen. Dafür muss man aber explizit die Klasse initialisieren.
+
+[click] Das hilft sehr bei der Testbarkeit.
+Wenn man Browser-APIs wie `Location` injecten lässt, kann man sie sehr einfach in den Tests mocken.
+
+[click] Nicht nur Klassen, sondern beliebige Werte können injected werden.
+
+Wie geht das technisch? Was ist  
+-->
 
 ---
 title: "Blick in die Vergangenheit: Dependency Injection"
