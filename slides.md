@@ -24,7 +24,7 @@ Charlie Harding
 
 ::footerRight::
 
-<a href="https://github.com/c-harding/angular-renaissance-talk" class="underline opacity-75 text-sm" target="_blank">Folien-Quelle</a>
+<a href="https://github.com/c-harding/angular-renaissance-talk/tree/codineers" class="underline opacity-75 text-sm" target="_blank">Folien-Quelle</a>
 
 ---
 title: Wer bin ich?
@@ -174,7 +174,7 @@ Charlie Harding
 ::middle::
 
 <QrCode
-  value="https://c-harding.github.io/angular-renaissance-talk"
+  value="https://c-harding.github.io/angular-renaissance-talk/codineers"
   :color="{light: '#00000000', dark: '#FFFFFFFF'}"
   caption="Folien"
 />
