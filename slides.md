@@ -22,6 +22,10 @@ Ein Blick in die moderne Welt von Angular
 Charlie Harding
 <SmartLink to="charlie.harding@qaware.de"/>
 
+::footerRight::
+
+<a href="https://github.com/c-harding/angular-renaissance-talk" class="underline opacity-75 text-sm" target="_blank">Folien-Quelle</a>
+
 ---
 title: Was ist Angular?
 layout: two-cols
@@ -116,3 +120,11 @@ Charlie Harding
 <EndLink to="github.com/c-harding"><bxl-github /></EndLink>
 
 </div>
+
+::middle::
+
+<QrCode
+  value="https://c-harding.github.io/angular-renaissance-talk"
+  :color="{light: '#00000000', dark: '#FFFFFFFF'}"
+  caption="Folien"
+/>

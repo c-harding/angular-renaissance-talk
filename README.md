@@ -1,11 +1,7 @@
 # Angular Renaissance
 
-To start the slide show:
+These are the slides for Charlie Harding’s Angular Renaissance talk.
 
-- `pnpm install`
-- `pnpm dev`
-- visit <http://localhost:3030>
+[See the slides here](https://c-harding.github.io/angular-renaissance-talk/main).
 
-Edit the [slides.md](./slides.md) to see the changes.
-
-Learn more about Slidev at the [documentation](https://sli.dev/).
+These are made with Slidev.

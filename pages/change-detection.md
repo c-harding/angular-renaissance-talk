@@ -142,7 +142,7 @@ Deswegen wird es abgeschafft: _zoneless_ ist derzeit experimental.
 </v-click>
 
 <v-switch at="1">
-<template #2-4>
+<template #2-5>
 <div font="serif">
 
 > Vorher wurde alles jedes Mal neu gerendert, wenn _etwas passiert hat_.
@@ -168,14 +168,14 @@ Deswegen wird es abgeschafft: _zoneless_ ist derzeit experimental.
 
 </div>
 </template>
-<template #4-6>
+<template #5-7>
 
 > Jetzt wird eine Komponente neu gerendert, wenn _etwas passiert hat_.
 >
 > - Signal wird aktualisiert
 > - Input wurde gesetzt
 >
-> <v-click at="5">
+> <v-click at="6">
 >
 > - `cdRef.markForCheck()`
 >
@@ -191,20 +191,26 @@ rightStyle:
   --slidev-code-font-size: 16px
 ---
 
-<v-clicks>
+<v-clicks at="0">
 
 - Statt `OnPush` werden Sigal-Komponenten kommen
-- Hier wird nicht neu gerendert, bis auf Signale.
+- Hier wird nicht neu gerendert, bis auf Signale
 - Nur genau die geänderte Stelle wird dann aktualisiert
 
 </v-clicks>
 
+<v-click at=5>
+
+- Im Moment nur noch ein [RFC](https://github.com/angular/angular/discussions/49682).
+
+</v-click>
+
 ::right::
 
-````md magic-move
+````md magic-move {at: 1}
 <!-- prettier-ignore-start -->
 
-```angular-html {|2|4-6|5}
+```angular-html {||2|4-6|5}
 <template>
   <h1>{{ title() }}</h1>
 
