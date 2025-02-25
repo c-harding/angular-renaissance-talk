@@ -7,7 +7,7 @@ layout: two-cols
 
 - Modernes Angular basiert sich stark auf Signals
 - Für die React- und Vue-Entwickler unter euch: „`ref`“
-- Die kleinste Einheit von Reactivität
+- Die kleinste Einheit von Reaktivität
 
 </v-clicks>
 
