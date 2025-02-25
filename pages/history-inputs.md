@@ -6,12 +6,12 @@ right-style:
   --slidev-code-font-size: 16px
 ---
 
-<v-clicks at="0">
+<v-clicks at="0" depth="2">
 
 - Vorher waren Inputs nur annotierte Felder
 - `required` war nicht typesafe (`!`)
 - Abgeleiteter State wurde ständig neu berechnet
-- Manuelle Memoisierung (mit einem Input-Setter) ist kompliziert
+- Manuelle Memoisierung (mit einem Input-Setter) war kompliziert
   - besonders mit mehreren Inputs
 
 </v-clicks>

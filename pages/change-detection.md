@@ -9,6 +9,12 @@ Hauptaufgabe eines Frontend-Frameworks ist zu entscheiden:
 
 ### Was muss wann neu gerendert werden? {.text-center}
 
+<!--
+Nachdem wir den Zustand gespeichert haben, müssen wir die UI entsprechend aktualisieren.
+
+[click] Das ist ja die Hauptaufgabe jedes UI-Frameworks: Was muss wann neu gerendert werden?
+ -->
+
 </div>
 
 ---
@@ -16,7 +22,7 @@ title: "Blick in die Vergangenheit: Change Detection"
 class: font-serif
 ---
 
-Vorher wurde alles jedes Mal neu gerendert, wenn _etwas passiert hat_.
+Vorher wurde alles jedes Mal neu gerendert, wenn _etwas passiert ist_.
 
 <v-click>
 
@@ -145,7 +151,7 @@ Deswegen wird es abgeschafft: _zoneless_ ist derzeit experimental.
 <template #2-5>
 <div font="serif">
 
-> Vorher wurde alles jedes Mal neu gerendert, wenn _etwas passiert hat_.
+> Vorher wurde alles jedes Mal neu gerendert, wenn _etwas passiert ist_.
 >
 > <div v-click="3" font="sans">
 >
@@ -170,7 +176,7 @@ Deswegen wird es abgeschafft: _zoneless_ ist derzeit experimental.
 </template>
 <template #5-7>
 
-> Jetzt wird eine Komponente neu gerendert, wenn _etwas passiert hat_.
+> Jetzt wird eine Komponente neu gerendert, wenn _etwas passiert ist_.
 >
 > - Signal wird aktualisiert
 > - Input wurde gesetzt

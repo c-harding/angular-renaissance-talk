@@ -5,7 +5,7 @@ right-style:
   --slidev-code-font-size: 16px
 ---
 
-- Auch `input` ist ein Signal
+- `input` ist ein Signal
 
 <v-clicks at="1">
 
@@ -134,3 +134,16 @@ Definition einer anderen Komponente:
 
 </v-click>
 </v-click>
+
+<!--
+- Auch `input` ist ein Signal
+- [click] `input` ist readonly, weil die Komponente selbst den Wert nicht bearbeiten darf. Nur die aufrufende Komponente darf das.
+- [click] Inputs sind optional, also sieht man `undefined` im Type.
+- [click] Es sei denn, man einen Fallback angibt. Wenn nichts bzw. undefined gesetzt wird, wird der Fallback genommen.
+- [click] Man kann den Wert auch als Required markieren.
+- [click] Wir sind in einer Klasse, also wird `this` verwendet, und auf den Inputs zuzugreifen.
+- [click]
+- [click] Wie rufen wir die Funktion dann auf? Das sieht dann so aus, mit einem Element und Attributen.
+- [click] Und so sieht es in der Komponenten-Definition aus.
+- [click] Inputs können auch dynamisch sein.
+-->

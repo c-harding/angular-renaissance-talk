@@ -136,4 +136,5 @@ Lasst uns ein Beispiel anschauen.
 - [click] Im Type sehen wir hier einen Unterschied: dieser Signal ist nicht mehr *writable*.
 - [click] Die Abhängigkeiten werden automatisch erfasst, in dem der Wert beim Berechnen gelesen wird. Wenn wir die Abhängigkeit aktualisieren, wird der Computed-Wert auch neu berechnet.
 - [click] Es wird auch memoisiert: die Länge wird nicht neu berechnet, wenn der String gleich bleibt.
+- Bei einer einfache Länge bringt das nicht so viel, aber wenn man z.B. eine Liste sortieren und filtern müsst, ist das sehr hilfreich für die Performance.
 -->
