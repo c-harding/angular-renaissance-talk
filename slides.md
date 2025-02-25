@@ -49,7 +49,7 @@ Angular-Entwickler
 
 ::right::
 
-<img src="../img/cha.jpeg"  class="rounded-full w-70 mx-auto" />
+<img src="./img/cha.jpeg"  class="rounded-full w-70 mx-auto" />
 
 ---
 title: Was ist Angular?
