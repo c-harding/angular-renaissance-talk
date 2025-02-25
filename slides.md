@@ -25,8 +25,6 @@ Charlie Harding
 ---
 title: Was ist Angular?
 layout: two-cols
-right-style:
-  --slidev-code-font-size: 16px
 ---
 
 <v-clicks at="+0" depth="2">

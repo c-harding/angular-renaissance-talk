@@ -1,8 +1,6 @@
 ---
 title: Signals
 layout: two-cols
-right-style:
-  --slidev-code-font-size: 16px
 ---
 
 <v-clicks at="+0">
