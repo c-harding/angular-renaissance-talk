@@ -47,7 +47,6 @@ Technische Umsetzung: `zone.js` fängt alle `Promise`s, `setTimeout`s usw. ab.
 
 ---
 title: Modernes Change Detection
-articleClass: justify-between
 ---
 
 Jetzt haben wir ein präziseres Werkzeug: {.!mb-0}

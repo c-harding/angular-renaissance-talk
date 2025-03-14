@@ -1,8 +1,6 @@
 ---
-# You can also start simply with 'default'
 theme: qaware
 color: blue
-# some information about your slides (markdown enabled)
 title: Angular Renaissance
 author: Charlie Harding · QAware GmbH
 authorUrl: qaware.de
@@ -10,8 +8,9 @@ authorUrl: qaware.de
 drawings:
   persist: false
 # slide transition: https://sli.dev/guide/animations.html#slide-transitions
-transition: # enable MDC Syntax: https://sli.dev/features/mdc
+transition:
 
+# enable MDC Syntax: https://sli.dev/features/mdc
 mdc: true
 ---
 
@@ -176,6 +175,6 @@ Charlie Harding
 
 <QrCode
   value="https://c-harding.github.io/angular-renaissance-talk/codineers"
-  :color="{light: '#00000000', dark: '#FFFFFFFF'}"
+  color="white"
   caption="Folien"
 />
