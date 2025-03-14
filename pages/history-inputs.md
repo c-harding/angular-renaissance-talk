@@ -1,8 +1,8 @@
 ---
 title: "Blick in die Vergangenheit: vor Signals"
-layout: two-cols
-class: font-serif
-right-style:
+inner-split: 50
+page-class: font-serif
+style:
   --slidev-code-font-size: 16px
 ---
 

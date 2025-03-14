@@ -19,7 +19,7 @@ Nachdem wir den Zustand gespeichert haben, müssen wir die UI entsprechend aktua
 
 ---
 title: "Blick in die Vergangenheit: Change Detection"
-class: font-serif
+pageClass: font-serif
 ---
 
 Vorher wurde alles jedes Mal neu gerendert, wenn _etwas passiert ist_.
@@ -80,8 +80,8 @@ Nur die betroffenen Komponenten werden neu gerendert:
 
 ---
 title: Modernes Change Detection mit Signals
-layout: two-cols
-rightStyle:
+inner-split: 50
+style:
   --slidev-code-font-size: 16px
 ---
 
@@ -128,8 +128,6 @@ rightStyle:
 
 ---
 title: Eine Zukunft ohne zone.js
-rightStyle:
-  --slidev-code-font-size: 16px
 ---
 
 ::title::
@@ -192,8 +190,8 @@ Deswegen wird es abgeschafft: _zoneless_ ist derzeit experimental.
 
 ---
 title: Signal-Komponenten
-layout: two-cols
-rightStyle:
+inner-split: 50
+style:
   --slidev-code-font-size: 16px
 ---
 

@@ -7,7 +7,7 @@ Angular ist bereit für Enterprise
 
 ---
 title: Services
-layout: two-cols
+inner-split: 50
 ---
 
 <v-clicks>
@@ -43,9 +43,10 @@ class UserService {
 
 ---
 title: Provider-Scopes
-layout: image-right
-image: "/images/tabs.png"
-imageClass: bg-contain
+inner-split: 50
+right:
+  image: "/images/tabs.png"
+  class: bg-contain
 ---
 
 ```angular-ts
@@ -61,7 +62,7 @@ Manchmal ist das aber nicht gewollt:
 
 ---
 title: Provider-Scopes
-layout: two-cols
+inner-split: 50
 ---
 
 <v-clicks at="0">
@@ -113,7 +114,7 @@ class MyProvider {}
 
 ---
 title: Injection-Tokens
-layout: two-cols
+inner-split: 50
 ---
 
 <v-clicks at="0" depth="2">
@@ -229,7 +230,7 @@ Wie geht das technisch? Was ist
 ---
 title: "Blick in die Vergangenheit: Dependency Injection"
 class: font-serif
-layout: two-cols
+inner-split: 50
 ---
 
 <v-clicks at="0">
@@ -275,7 +276,7 @@ class MyComponent {
 
 ---
 title: "Use-Case: Hooks"
-layout: two-cols
+inner-split: 50
 ---
 
 <v-clicks at="0">

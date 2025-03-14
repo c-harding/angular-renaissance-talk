@@ -1,6 +1,6 @@
 ---
 title: Signals
-layout: two-cols
+inner-split: 50
 ---
 
 <v-clicks at="+0">

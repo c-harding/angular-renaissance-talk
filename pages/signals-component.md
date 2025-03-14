@@ -1,7 +1,7 @@
 ---
 title: Signals in einer Komponente
-layout: two-cols
-right-style:
+inner-split: 50
+style:
   --slidev-code-font-size: 16px
 ---
 

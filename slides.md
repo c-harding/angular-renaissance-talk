@@ -28,8 +28,9 @@ Charlie Harding
 
 ---
 title: Wer bin ich?
-layout: two-cols
-rightClass: flex
+inner-split: 50
+right:
+  class: flex
 ---
 
 **Charlie Harding**  
@@ -53,7 +54,7 @@ Angular-Entwickler
 
 ---
 title: Was ist Angular?
-layout: two-cols
+inner-split: 50
 ---
 
 <v-clicks at="+0" depth="2">
