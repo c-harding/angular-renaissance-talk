@@ -1,5 +1,5 @@
 ---
-theme: qaware
+theme: "@qaware-internal/slidev-theme-qaware"
 color: blue
 title: Angular Renaissance
 author: Charlie Harding · QAware GmbH

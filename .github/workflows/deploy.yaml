@@ -38,8 +38,15 @@ jobs:
         id: detect-package-manager
         run: |
           if [ -f "${{ github.workspace }}/yarn.lock" ]; then
+            npm i -g yarn
             echo "manager=yarn" >> $GITHUB_OUTPUT
             echo "command=install" >> $GITHUB_OUTPUT
+            echo "install=install" >> $GITHUB_OUTPUT
+            echo "run=run" >> $GITHUB_OUTPUT
+            exit 0
+          elif [ -f "${{ github.workspace }}/pnpm-lock.yaml" ]; then
+            npm i -g pnpm
+            echo "manager=pnpm" >> $GITHUB_OUTPUT
             echo "install=install" >> $GITHUB_OUTPUT
             echo "run=run" >> $GITHUB_OUTPUT
             exit 0
@@ -52,9 +59,11 @@ jobs:
             echo "Unable to determine package manager"
             exit 1
           fi
-      - uses: webfactory/ssh-agent@v0.9.0
-        with:
-          ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
+      - name: "Log in to .npmrc"
+        run: |
+          echo "//npm.pkg.github.com/:_authToken=${NPM_TOKEN}" >> .npmrc
+        env:
+          NPM_TOKEN: ${{ secrets.NPM_KEY }}
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
