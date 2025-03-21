@@ -1,5 +1,0 @@
-import{aJ as o,b as c,o as t,w as d,ag as m,f as u,g as s,i as p,v as l,x as _,C as a}from"./modules/vue-DfG9avWx.js";import{_ as f}from"./chapter.vue_vue_type_script_setup_true_lang-CBCb0_Yu.js";import{u as w,f as k}from"./slidev/context-BOdlSOE8.js";import"./Layout.vue_vue_type_script_setup_true_lang-CzRsurAK.js";import"./index-DK0Oc5nL.js";import"./modules/shiki-BZmfkvGE.js";const g={text:"xl"},N={__name:"change-detection.md__slidev_8",setup(x){const{$clicksContext:r,$frontmatter:n}=w();return r.setup(),(v,e)=>{const i=o("click");return t(),c(f,l(_(a(k)(a(n),7))),{default:d(()=>[m((t(),u("div",g,[e[0]||(e[0]=s("p",null,"Hauptaufgabe eines Frontend-Frameworks ist zu entscheiden:",-1)),e[1]||(e[1]=s("h3",{class:"text-center"},"Was muss wann neu gerendert werden? ",-1)),p(`
-Nachdem wir den Zustand gespeichert haben, müssen wir die UI entsprechend aktualisieren.
-
-[click] Das ist ja die Hauptaufgabe jedes UI-Frameworks: Was muss wann neu gerendert werden?
- `)])),[[i]])]),_:1},16)}}};export{N as default};
